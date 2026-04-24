@@ -47,7 +47,7 @@ template: |
 
   ---
   ## 🛠 Technical Overview
-  - **Target Version**: `v$RESOLVED_VERSION`F
+  - **Target Version**: `v$RESOLVED_VERSION`
   - **Previous Stable**: `$PREVIOUS_TAG`
   - **Deployment Status**: 🚀 Ready for Production
   - **Environment**: VPS Standard
