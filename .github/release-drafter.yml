@@ -1,0 +1,46 @@
+# Release Drafter Configuration for Octoscript
+# Docs: https://github.com/release-drafter/release-drafter
+
+# Template untuk nama rilis dan tag
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+
+# Memaksa 2-digit versioning ($Major.$Minor)
+# RESOLVED_VERSION akan mengikuti format ini
+version-template: '$MAJOR.$MINOR'
+
+# Kategori perubahan berdasarkan label Pull Request
+categories:
+  - title: '🚀 Fitur Baru'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Perbaikan'
+    labels:
+      - 'fix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore'
+      - 'dependencies'
+
+# Logika penentuan versi berikutnya
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'feature'
+      - 'fix'
+      - 'patch'
+      - 'minor'
+      - 'enhancement'
+  default: 'minor'
+
+# Template isi catatan rilis
+template: |
+  ## Apa yang baru?
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$REPOSITORY/compare/$PREVIOUS_TAG...$NEXT_TAG
